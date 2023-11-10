@@ -1,2 +1,2 @@
 # PHP_DWS
-Desarrolamiento Web en servidor (2ºDAW)
+Desarrolamiento Web en entonrno servidor (2ºDAW)
