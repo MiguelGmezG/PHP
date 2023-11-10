@@ -12,3 +12,4 @@ switch ($numero1 <=> $numero2) {
         echo 'El ' . $numero1 . ' es mayor';
         break;
 }
+?>
