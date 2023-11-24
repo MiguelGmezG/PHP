@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    <link rel="stylesheet" href="../index.css">
+
+</head>
+
+<body>
+    <form action="ejercicio8b.php" method="post">
+        <label for="dato">Introduce el dato:</label>
+        <input type="text" id="dato" name="dato" required>
+
+        <br>
+
+        <label>Selecciona el filtro:</label>
+        <input type="radio" id="email" name="filtro" value="email" required>Email
+
+
+        <input type="radio" id="numeros" name="filtro" value="numeros" required>Sólo Números
+
+
+        <input type="radio" id="nif" name="filtro" value="nif" required>NIF
+
+
+        <input type="radio" id="texto" name="filtro" value="texto" required>Sólo Texto
+ 
+
+        <br>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+    </form>
+</body>
+
+</html>
