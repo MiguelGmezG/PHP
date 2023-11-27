@@ -57,7 +57,7 @@ function borrarTodosHoteles(&$hoteles)
     return "No hay hoteles en la base de datos.";
 }
 
-function añadirHotel(&$hoteles, $nuevoHotel)
+function añadirHotel($hoteles, $nuevoHotel)
 {
     $hoteles[] = $nuevoHotel;
     return listadoHoteles($hoteles);

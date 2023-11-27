@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>    
+    <title>Tu Sitio</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+          <div class="logo">
+              <a href="../Recepcion/index.html"><img src="../../src/logo1.png" alt="Logo"></a>
+              <a href="../Recepcion/index.html"><img src="../../src/logo.png" alt="Logo"></a>
+          </div>
+          <ul class="nav-links">
+              <li><a href="../Recepcion/index.html">Recepción</a></li>
+              <li><a href="../AñadirHotel/index.html">Unete a nosotros</a></li>
+              <li><a href="../NuestrosHoteles/index.php">Nuestros Hoteles</a></li>
+              <li><a href="borrar_hotel.html">¿Te separas?</a></li>
+          </ul>
+      </nav>
+  </header>
+    <div class="content">
+      <div class="content">
+        <form
+          action="formulario.php"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <label for="nombre">Nombre del Hotel:</label>
+          <input type="text" id="nombre" name="nombre" required />
+
+          Puntuacion:
+          <p class="clasificacion">
+            <input id="radio1" type="radio" name="estrellas" value="5" /><label
+              for="radio1"
+              >★</label
+            >
+            <input id="radio2" type="radio" name="estrellas" value="4" /><label
+              for="radio2"
+              >★</label
+            >
+            <input id="radio3" type="radio" name="estrellas" value="3" /><label
+              for="radio3"
+              >★</label
+            >
+            <input id="radio4" type="radio" name="estrellas" value="2" /><label
+              for="radio4"
+              >★</label
+            >
+            <input id="radio5" type="radio" name="estrellas" value="1" /><label
+              for="radio5"
+              >★</label
+            >
+          </p>
+          <br />
+
+          <label for="habitaciones">Número de Habitaciones:</label>
+          <input type="number" id="habitaciones" name="habitaciones" required />
+
+          <label for="poblacion">Población:</label>
+          <input type="text" id="poblacion" name="poblacion" required />
+
+          <label for="direccion">Dirección:</label>
+          <input type="text" id="direccion" name="direccion" required />
+
+          <label for="imagen">Imagen:</label>
+          <input
+            type="file"
+            id="imagen"
+            name="imagen"
+            accept="image/*"
+            required
+          />
+
+          <button type="submit" class="boton">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <p>Author: Miguel Gómez ©Copyright</p>
+    </footer>
+  </body>
+</html>

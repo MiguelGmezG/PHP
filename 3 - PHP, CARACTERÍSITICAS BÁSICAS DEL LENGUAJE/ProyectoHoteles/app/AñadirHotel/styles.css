@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('../../src/fondo.jpg') center/cover fixed;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 5px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #333;
+    z-index: 999; 
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    max-height: 100px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 5px;
+    max-width: 1000px;
+    margin: 20px auto;
+    margin-bottom: 60px; 
+
+}
+
+.boton {
+    background-color: #e74c3c; /* Color rojo bonito */
+    color: #fff; /* Letras blancas */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #c0392b; /* Color más oscuro al pasar el ratón */
+}
+
+.boton:active {
+    transform: scale(0.95); /* Efecto de escala al hacer clic */
+}
+
+/* Estilos para el formulario y sus elementos */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input,
+form button,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #c0392b;
+}
+
+form button:active {
+    transform: scale(0.95);
+}
+
+/* Estilos para las estrellas */
+form .clasificacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    margin: 0;
+    padding: 0;
+}
+
+form .clasificacion input {
+    display: none;
+}
+
+form .clasificacion label {
+    font-size: 20px;
+    color: grey;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+form .clasificacion label:hover,
+form .clasificacion label:hover ~ label {
+    color: orange;
+}
+
+form .clasificacion input[type="radio"]:checked ~ label {
+    color: orange;
+}
+
+form .clasificacion label {
+    font-size: 30px; /* Tamaño de la fuente de las estrellas */
+    color: grey;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    margin-right: 5px; /* Espaciado entre las estrellas */
+}
