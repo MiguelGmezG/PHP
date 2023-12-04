@@ -1,37 +1,55 @@
 <?php
-class Calculadora
+
+class Mamifero
 {
-    public static function sumar($valor1, $valor2)
+    private $especie;
+    private $sonido;
+    protected  $familia;
+
+    public function __construct($especie, $sonido)
     {
-        return $valor1 + $valor2;
+        $this->especie = $especie;
+        $this->sonido = $sonido;
+        $this->familia = "Mamífero";
     }
 
-    public static function restar($valor1, $valor2)
+    public function getEspecie()
     {
-        return $valor1 - $valor2;
+        return $this->especie;
     }
 
-    public static function multiplicar($valor1, $valor2)
+    public function getFamilia()
     {
-        return $valor1 * $valor2;
+        return $this->familia;
     }
 
-    public static function dividir($valor1, $valor2)
+    public function sonido()
     {
-        if ($valor2 != 0) {
-            return $valor1 / $valor2;
-        } else {
-            throw new Exception("Error: No se puede dividir por cero.");
-        }
+        return "Sonido de " . $this->getEspecie() . ", de la familia " . $this->getFamilia() . ": " . $this->sonido;
     }
 }
 
-try {
-    echo "Suma: " . Calculadora::sumar(5, 3) . "<br>";
-    echo "Resta: " . Calculadora::restar(8, 2) . "<br>";
-    echo "Multiplicación: " . Calculadora::multiplicar(4, 6) . "<br>";
-    echo "División: " . Calculadora::dividir(10, 2) . "<br>";
-    echo "División: " . Calculadora::dividir(10, 0) . "<br>";
-} catch (Exception $e) {
-    echo $e->getMessage();
+class Perro extends Mamifero
+{
+    public function __construct($especie, $sonido)
+    {
+        parent::__construct($especie, $sonido);
+        $this->familia = "Cánidos";
+    }
 }
+
+class Gato extends Mamifero
+{
+    public function __construct($especie, $sonido)
+    {
+        parent::__construct($especie, $sonido);
+        $this->familia = "Felinos";
+    }
+}
+
+$miPerro = new Perro("Yorshire", "ladrido");
+$miGato = new Gato("Callejero", "maullido");
+
+// Mostrar sus sonidos
+echo $miPerro->sonido() . "<br>";
+echo $miGato->sonido() . "<br>";
