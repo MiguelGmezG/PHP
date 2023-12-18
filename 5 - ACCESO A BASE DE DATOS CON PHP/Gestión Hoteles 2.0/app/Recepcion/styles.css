@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("../../src/fondo.jpg") center/cover fixed;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+footer {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #333;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  max-height: 100px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+
+.content-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 5px;
+}
+
+.content-box img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.boton {
+  background-color: #e74c3c; /* Color rojo bonito */
+  color: #fff; /* Letras blancas */
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #c0392b; /* Color más oscuro al pasar el ratón */
+}
+
+.boton:active {
+  transform: scale(0.95); /* Efecto de escala al hacer clic */
+}
+
+/* Estilo para el contenedor de la tabla */
+.table-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  overflow-x: auto; /* Agrega barras de desplazamiento horizontal si es necesario */
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Estilo para la tabla */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.styled-table img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Estilo para las filas impares de la tabla */
+.styled-table tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Estilo para las filas al pasar el ratón */
+.styled-table tbody tr:hover {
+  background-color: #e74c3c;
+}
+
+.image-container {
+  width: 200px;
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 5px;
+}
