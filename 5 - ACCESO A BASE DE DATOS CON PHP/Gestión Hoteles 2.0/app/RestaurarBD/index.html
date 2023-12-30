@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>   
+    <title>Restaurar Base de Datos</title>
+  </head>
+
+  <body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../Recepcion/index.php"><img src="../../src/logo1.png" alt="Logo"></a>
+                <a href="../Recepcion/index.php"><img src="../../src/logo.png" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../Recepcion/index.php">Recepción</a></li>
+                <li><a href="../AñadirHotel/index.html">Añadir Hotel</a></li>
+                <li><a href="../BorrarHotel/index.html">Borrar Hotel</a></li>
+                <li><a href="../ModificarHotel/index.html">Modificar Hotel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+      <div class="content">
+        <form action="restaurar.php" method="post" enctype="multipart/form-data">
+          ¿Estás seguro?
+          <br><br>
+          <button type="submit" class="boton">Restaurar Base de Datos</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>Author: Miguel Gómez ©Copyright</p>
+    </footer>
+  </body>
+</html>

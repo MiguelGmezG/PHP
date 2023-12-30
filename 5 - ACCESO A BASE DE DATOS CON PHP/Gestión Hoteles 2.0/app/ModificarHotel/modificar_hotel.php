@@ -2,18 +2,12 @@
 $mensaje = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nombre = $_POST['nombre'];
-    $estrellas = $_POST['estrellas'];
-    $habitaciones = $_POST['habitaciones'];
-    $poblacion = $_POST['poblacion'];
-    $direccion = $_POST['direccion'];
-
-    $imagen = $_FILES['imagen'];
-    $imagen_nombre = $imagen['name'];
-    $imagen_temp = $imagen['tmp_name'];
-    $imagen_ruta = '../../database/img/' . $imagen_nombre;
-
-    move_uploaded_file($imagen_temp, $imagen_ruta);
+    $nombre_hotel = $_POST['nombre'];
+    $nuevo_nombre = $_POST['nuevoNombre'];
+    $nuevas_estrellas = $_POST['nuevasEstrellas'];
+    $nuevas_habitaciones = $_POST['nuevasHabitaciones'];
+    $nueva_poblacion = $_POST['nuevaPoblacion'];
+    $nueva_direccion = $_POST['nuevaDireccion'];
 
     // Conectar a la base de datos
     $servername = "localhost";
@@ -29,17 +23,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Preparar la consulta SQL
-    $sql = "INSERT INTO hoteles (Nombre, Categoria, Habitacion, Poblacion, Direccion, Imagen) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "UPDATE hoteles SET Nombre=?, Categoria=?, Habitacion=?, Poblacion=?, Direccion=? WHERE Nombre=?";
     $stmt = $conn->prepare($sql);
 
     // Vincular los parámetros
-    $stmt->bind_param("siiiss", $nombre, $estrellas, $habitaciones, $poblacion, $direccion, $imagen_ruta);
+    $stmt->bind_param("siiiss", $nuevo_nombre, $nuevas_estrellas, $nuevas_habitaciones, $nueva_poblacion, $nueva_direccion, $nombre_hotel);
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
-        $mensaje = "Datos insertados correctamente en la base de datos.";
+        $mensaje = "Hotel modificado correctamente.";
     } else {
-        $mensaje = "Error al insertar datos en la base de datos: " . $stmt->error;
+        $mensaje = "Error al modificar hotel: " . $stmt->error;
     }
 
     // Cerrar la conexión

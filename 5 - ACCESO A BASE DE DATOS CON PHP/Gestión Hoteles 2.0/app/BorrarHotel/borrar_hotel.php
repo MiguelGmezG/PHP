@@ -2,18 +2,7 @@
 $mensaje = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nombre = $_POST['nombre'];
-    $estrellas = $_POST['estrellas'];
-    $habitaciones = $_POST['habitaciones'];
-    $poblacion = $_POST['poblacion'];
-    $direccion = $_POST['direccion'];
-
-    $imagen = $_FILES['imagen'];
-    $imagen_nombre = $imagen['name'];
-    $imagen_temp = $imagen['tmp_name'];
-    $imagen_ruta = '../../database/img/' . $imagen_nombre;
-
-    move_uploaded_file($imagen_temp, $imagen_ruta);
+    $nombre_hotel = $_POST['nombre'];
 
     // Conectar a la base de datos
     $servername = "localhost";
@@ -29,23 +18,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Preparar la consulta SQL
-    $sql = "INSERT INTO hoteles (Nombre, Categoria, Habitacion, Poblacion, Direccion, Imagen) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "DELETE FROM hoteles WHERE Nombre = ?";
     $stmt = $conn->prepare($sql);
 
     // Vincular los parámetros
-    $stmt->bind_param("siiiss", $nombre, $estrellas, $habitaciones, $poblacion, $direccion, $imagen_ruta);
+    $stmt->bind_param("s", $nombre_hotel);
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
-        $mensaje = "Datos insertados correctamente en la base de datos.";
+        $mensaje = "Hotel eliminado correctamente.";
     } else {
-        $mensaje = "Error al insertar datos en la base de datos: " . $stmt->error;
+        $mensaje = "Error al eliminar hotel: " . $stmt->error;
     }
 
     // Cerrar la conexión
     $stmt->close();
     $conn->close();
 }
+?>
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -54,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <title>Tu Sitio</title>
 </head>
