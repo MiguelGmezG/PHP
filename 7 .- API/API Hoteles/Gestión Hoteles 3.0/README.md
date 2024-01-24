@@ -1,0 +1,1 @@
+Para ver este proyecto tienes que crear una mysql llamada hoteles e importar el fichero hoteles.sql

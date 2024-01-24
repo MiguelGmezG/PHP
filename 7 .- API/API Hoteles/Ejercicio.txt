@@ -1,0 +1,7 @@
+Realiza la implementación de la API para la aplicación de los hoteles que ya hemos tratado en temas anteriores los métodos a implementar son:
+
+GET: Devuelve el listado de hoteles
+GET con ID: Devuelve solo un hotel en concreto.
+POST: Inserta un hotel
+PUT: Modifica un hotel
+DELETE: Elimina un hotel
